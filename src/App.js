@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
 
@@ -9,12 +9,10 @@ function App() {
     <BrowserRouter>
       <Header />
       <div className="App">
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
+        <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        </Routes>
       </div>
     </BrowserRouter>
   );
